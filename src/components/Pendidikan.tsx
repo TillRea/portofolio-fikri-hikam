@@ -4,14 +4,14 @@ const entries = [
     badge: 'Sedang Berjalan',
     title: 'UNISNU Jepara',
     sub: 'Universitas Islam Nahdlatul Ulama Jepara',
-    desc: 'S1 Sistem Informasi — menempuh studi sambil membangun dan mengelola infrastruktur web TillRea.',
+    desc: 'S1 Sistem Informasi (semester 5) — menempuh studi sambil membangun dan mengelola infrastruktur web TillRea.',
     active: true,
   },
   {
     period: 'Lulus 2024',
     badge: 'Sekolah Menengah',
     title: 'SMK Negeri 2 Jepara',
-    sub: 'Sekolah Menengah Kejuruan',
+    sub: 'Jurusan Kriya Kayu dan Rotan',
     desc: 'Menyelesaikan pendidikan menengah kejuruan pada tahun 2024 sebelum melanjutkan ke jenjang sarjana.',
     active: false,
   },
@@ -66,12 +66,19 @@ export default function Pendidikan() {
               <h3 className="font-bold text-dark text-[16.5px]">Bootcamp &amp; Komunitas</h3>
               <p className="text-slate-600 text-[14.5px] leading-relaxed mt-2">
                 Di luar jalur formal, saya belajar secara otodidak lewat eksperimen langsung —
-                membangun server, bot, dan sistem otomasi yang dipakai sehari-hari. Riwayat
-                bootcamp dan komunitas akan ditambahkan di sini bila ada.
+                membangun dan merawat server sendiri, bot WhatsApp &amp; Telegram, sampai analitik
+                web (GA4 &amp; Search Console) yang terpasang di situs-situs saya.
               </p>
-              <span className="inline-block mt-4 text-[12px] font-bold uppercase tracking-[0.06em] text-primary bg-white border border-violet-200 px-3 py-1.5 rounded-full">
-                Segera ditambahkan
-              </span>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {['Agen AI', 'Otomasi', 'Analitik Web'].map((c) => (
+                  <span
+                    key={c}
+                    className="text-[12px] font-bold uppercase tracking-[0.06em] text-primary bg-white border border-violet-200 px-3 py-1.5 rounded-full"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
             </aside>
           </div>
         </div>
