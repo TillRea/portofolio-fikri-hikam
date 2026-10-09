@@ -50,7 +50,7 @@ export default function Pengalaman() {
             </ul>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-6 mt-6 items-start">
+          <div className="grid sm:grid-cols-2 gap-6 mt-6 items-start">
             <div className="bg-white border border-slate-200 rounded-3xl p-7 shadow-[0_1px_2px_rgba(15,23,42,0.05)]">
               <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-primary">
                 Pengalaman Kerja
@@ -58,72 +58,25 @@ export default function Pengalaman() {
               <div className="mt-4">
                 <h3 className="font-bold text-dark text-[16.5px]">Crew — Stand Kentang Keriting</h3>
                 <p className="text-slate-500 text-[13.5px] font-medium mt-0.5">
-                  Jan – Feb 2026 · ±1 bulan · Jepara
+                  Jan – Feb 2026 · Jepara
                 </p>
-                <ul className="mt-2.5 space-y-2">
-                  {[
-                    'Mengoperasikan stand hampir sendirian: membentuk, membalur tepung, dan menggoreng kentang',
-                    'Membuat minuman dan melayani pembeli secara langsung',
-                    'Berjualan di samping lokasi Saestu Coffee dan pada event UMKM di Alun-Alun Jepara',
-                  ].map((t) => (
-                    <li key={t} className="flex gap-3 text-[14.5px] text-slate-700 leading-relaxed">
-                      <span className="mt-[8px] w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                      {t}
-                    </li>
-                  ))}
-                </ul>
               </div>
-              <div className="mt-6 border-t border-slate-100 pt-5">
+              <div className="mt-5 border-t border-slate-100 pt-5">
                 <h3 className="font-bold text-dark text-[16.5px]">
                   Crew — Ikan Bakar Mbak Novi Live Seafood
                 </h3>
-                <p className="text-slate-500 text-[13.5px] font-medium mt-0.5">
-                  2025 · ±2,5 bulan · Pantai Clumik, Jepara
-                </p>
-                <ul className="mt-2.5 space-y-2">
-                  {[
-                    'Kasir sekaligus mencatat pemasukan harian',
-                    'Membuat minuman sachet dan mengantar makanan & minuman ke pelanggan',
-                    'Membantu dapur — mengupas, memotong, membungkus, menggoreng — serta cleaning area',
-                  ].map((t) => (
-                    <li key={t} className="flex gap-3 text-[14.5px] text-slate-700 leading-relaxed">
-                      <span className="mt-[8px] w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                      {t}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-slate-500 text-[13.5px] font-medium mt-0.5">2025 · Jepara</p>
               </div>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-3xl p-7 shadow-[0_1px_2px_rgba(15,23,42,0.05)]">
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-primary">
+            <div className="border-2 border-dashed border-slate-300 rounded-3xl p-7 text-center bg-white/50">
+              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-slate-400">
                 Freelance &amp; Organisasi
               </p>
-              <div className="mt-4 space-y-6">
-                <div>
-                  <h3 className="font-bold text-dark text-[16.5px]">Website Reny HikZar Collection</h3>
-                  <p className="text-slate-600 text-[14.5px] leading-relaxed mt-1.5">
-                    Situs bisnis untuk penjahit di Sinanggul, Mlonggo, Jepara — saya rancang, bangun,
-                    dan rawat, termasuk analitik kunjungannya. Pesanan pelanggan masuk lewat WhatsApp
-                    dari situs ini (renyhikzar.tillrea.my.id).
-                  </p>
-                </div>
-                <div className="border-t border-slate-100 pt-5">
-                  <h3 className="font-bold text-dark text-[16.5px]">Hosting Website TillRea</h3>
-                  <p className="text-slate-600 text-[14.5px] leading-relaxed mt-1.5">
-                    Layanan hosting situs statis di server saya sendiri. Tamu mengajukan situs lewat
-                    bot Telegram; setelah persetujuan, situsnya langsung live sebagai subdomain —
-                    salah satunya cpi.tillrea.my.id.
-                  </p>
-                </div>
-                <div className="border-t border-slate-100 pt-5">
-                  <h3 className="font-bold text-dark text-[16.5px]">Bot &amp; Sistem Otomasi</h3>
-                  <p className="text-slate-600 text-[14.5px] leading-relaxed mt-1.5">
-                    Merancang dan mengoperasikan bot WhatsApp penagih urunan kuota serta sistem
-                    deployment otomatis yang berjalan terus di infrastruktur TillRea.
-                  </p>
-                </div>
-              </div>
+              <p className="font-bold text-dark text-[16.5px] mt-2">Segera ditambahkan</p>
+              <p className="text-slate-500 text-[14px] mt-1">
+                Bagian ini akan diisi ketika ada riwayat baru.
+              </p>
             </div>
           </div>
         </div>
