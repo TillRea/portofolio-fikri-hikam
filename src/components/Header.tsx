@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'Portfolio', href: '#portfolio' },
   { label: 'Pendidikan', href: '#pendidikan' },
   { label: 'Pengalaman', href: '#pengalaman' },
+  { label: 'Layanan', href: '#layanan' },
   { label: 'Eksperimen', href: '#blog' },
 ];
 

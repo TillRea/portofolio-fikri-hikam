@@ -5,6 +5,7 @@ import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Pendidikan from './components/Pendidikan';
 import Pengalaman from './components/Pengalaman';
+import Layanan from './components/Layanan';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -28,6 +29,7 @@ export default function App() {
         <Portfolio />
         <Pendidikan />
         <Pengalaman />
+        <Layanan />
         <Blog />
         <Contact />
       </main>

@@ -37,7 +37,7 @@ export default function Blog() {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              05 — Hobi &amp; Eksperimen
+              06 — Hobi &amp; Eksperimen
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>

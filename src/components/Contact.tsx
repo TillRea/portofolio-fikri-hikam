@@ -23,7 +23,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              06 — Kontak
+              07 — Kontak
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>
