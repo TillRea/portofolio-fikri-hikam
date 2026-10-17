@@ -30,24 +30,26 @@ const posts = [
   },
 ];
 
+import { usePrefs } from '../prefs';
+
 export default function Blog() {
+  const { t } = usePrefs();
   return (
     <section id="blog" className="py-24 lg:py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              06 — Hobi &amp; Eksperimen
+              {t('sec_blog_e')}
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-dark">
-              Yang sedang saya ulik
+              {t('sec_blog_h')}
             </h2>
             <p className="text-slate-600 max-w-md text-[15.5px] leading-relaxed">
-              Saya tidak menulis blog — waktu luang saya habis untuk bereksperimen. Ini yang
-              sedang saya oprek:
+{t('sec_blog_p')}
             </p>
           </div>
 

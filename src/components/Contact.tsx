@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { Mail, MapPin, Send } from 'lucide-react';
 import SocialIcons from './SocialIcons';
 
+import { usePrefs } from '../prefs';
+
 export default function Contact() {
+  const { t } = usePrefs();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -23,7 +26,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              07 — Kontak
+              {t('sec_kon_e')}
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>
@@ -31,12 +34,10 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mt-8">
             <div>
               <h2 className="text-3xl sm:text-[40px] leading-[1.15] font-extrabold tracking-tight text-dark">
-                Punya proyek, pertanyaan, atau sekadar mau menyapa?
+                {t('sec_kon_h')}
               </h2>
               <p className="text-slate-600 leading-relaxed text-[16.5px] mt-5 max-w-lg">
-                Saya selalu terbuka untuk kolaborasi dan peluang baru. Cara tercepat
-                menghubungi saya adalah email atau Telegram — atau isi formulir di samping,
-                nanti aplikasi email Anda yang meneruskan.
+{t('sec_kon_p')}
               </p>
 
               <ul className="mt-9 space-y-5">
@@ -67,8 +68,8 @@ export default function Contact() {
                     <MapPin className="w-5 h-5" />
                   </span>
                   <div>
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-slate-400">Domisili</p>
-                    <p className="font-semibold text-dark">Jepara, Jawa Tengah, Indonesia</p>
+                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-slate-400">{t('domisili')}</p>
+                    <p className="font-semibold text-dark">{t('domisili_v')}</p>
                   </div>
                 </li>
               </ul>
@@ -83,13 +84,13 @@ export default function Contact() {
               className="bg-white border border-slate-200 rounded-3xl p-7 sm:p-8 shadow-[0_1px_2px_rgba(15,23,42,0.05)] h-fit"
             >
               <div className="mb-5">
-                <label htmlFor="name" className="block text-[13.5px] font-bold text-dark mb-2">Nama</label>
+                <label htmlFor="name" className="block text-[13.5px] font-bold text-dark mb-2">{t('f_nama')}</label>
                 <input
                   type="text"
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Nama Anda"
+                  placeholder={t('f_nama_ph')}
                   className={inputCls}
                 />
               </div>
@@ -105,12 +106,12 @@ export default function Contact() {
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="message" className="block text-[13.5px] font-bold text-dark mb-2">Pesan</label>
+                <label htmlFor="message" className="block text-[13.5px] font-bold text-dark mb-2">{t('f_pesan')}</label>
                 <textarea
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Tulis pesan Anda…"
+                  placeholder={t('f_pesan_ph')}
                   className={`${inputCls} h-32 resize-none`}
                 />
               </div>
@@ -118,10 +119,10 @@ export default function Contact() {
                 type="submit"
                 className="w-full bg-primary text-white font-semibold text-[15px] py-3.5 rounded-full shadow-[0_12px_24px_-10px_rgba(109,40,217,0.6)] hover:bg-violet-800 transition-colors"
               >
-                Kirim Pesan
+                {t('f_kirim')}
               </button>
               <p className="mt-3.5 text-center text-[13px] text-slate-400">
-                Tombol ini membuka aplikasi email Anda, ditujukan ke fikrihikam9@gmail.com.
+                {t('f_note')}
               </p>
             </form>
           </div>

@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { usePrefs } from '../prefs';
 
 const navLinks = [
-  { label: 'Tentang', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Pendidikan', href: '#pendidikan' },
-  { label: 'Pengalaman', href: '#pengalaman' },
-  { label: 'Layanan', href: '#layanan' },
-  { label: 'Eksperimen', href: '#blog' },
+  { k: 'nav_tentang', href: '#about' },
+  { k: 'nav_portfolio', href: '#portfolio' },
+  { k: 'nav_pendidikan', href: '#pendidikan' },
+  { k: 'nav_pengalaman', href: '#pengalaman' },
+  { k: 'nav_layanan', href: '#layanan' },
+  { k: 'nav_eksperimen', href: '#blog' },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, tema, toggleLang, toggleTema, t } = usePrefs();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.pageYOffset > 10);
@@ -43,21 +45,36 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.k}
                 href={link.href}
                 className="text-[15px] font-medium text-slate-600 hover:text-dark transition-colors"
               >
-                {link.label}
+                {t(link.k)}
               </a>
             ))}
+            <div className="flex items-center gap-2">
+              <button type="button" onClick={toggleLang} aria-label="Ganti bahasa / Switch language" className="h-[38px] min-w-[38px] px-2.5 rounded-full border border-slate-200 bg-white text-dark text-[13px] font-bold inline-flex items-center justify-center">
+                {lang === 'id' ? 'EN' : 'ID'}
+              </button>
+              <button type="button" onClick={toggleTema} aria-label="Mode malam atau pagi" className="h-[38px] w-[38px] rounded-full border border-slate-200 bg-white text-dark inline-flex items-center justify-center">
+                {tema === 'gelap' ? <Sun className="w-[17px] h-[17px]" /> : <Moon className="w-[17px] h-[17px]" />}
+              </button>
+            </div>
             <a
               href="#contact"
               className="text-[14.5px] font-semibold text-white bg-dark px-5 py-2.5 rounded-full hover:bg-slate-800 transition-colors"
             >
-              Hubungi Saya
+              {t('hubungi')}
             </a>
           </nav>
 
+          <div className="flex items-center gap-2 lg:hidden">
+            <button type="button" onClick={toggleLang} aria-label="Ganti bahasa / Switch language" className="h-[38px] min-w-[38px] px-2.5 rounded-full border border-slate-200 bg-white text-dark text-[13px] font-bold inline-flex items-center justify-center">
+              {lang === 'id' ? 'EN' : 'ID'}
+            </button>
+            <button type="button" onClick={toggleTema} aria-label="Mode malam atau pagi" className="h-[38px] w-[38px] rounded-full border border-slate-200 bg-white text-dark inline-flex items-center justify-center">
+              {tema === 'gelap' ? <Sun className="w-[17px] h-[17px]" /> : <Moon className="w-[17px] h-[17px]" />}
+            </button>
           <button
             type="button"
             aria-label="Buka menu navigasi"
@@ -66,6 +83,7 @@ export default function Header() {
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
+          </div>
         </div>
 
         {mobileOpen && (
@@ -73,12 +91,12 @@ export default function Header() {
             <div className="bg-white border border-slate-200 rounded-2xl shadow-xl p-3">
               {navLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.k}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="block px-4 py-3 rounded-xl text-[15px] font-medium text-dark hover:bg-violet-50"
                 >
-                  {link.label}
+                  {t(link.k)}
                 </a>
               ))}
               <a
@@ -86,7 +104,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="block px-4 py-3 mt-1 rounded-xl text-[15px] font-semibold text-white bg-primary text-center"
               >
-                Hubungi Saya
+                {t('hubungi')}
               </a>
             </div>
           </nav>

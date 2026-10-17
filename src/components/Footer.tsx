@@ -1,18 +1,21 @@
 import SocialIcons from './SocialIcons';
 
 const tautan = [
-  { label: 'Beranda', href: '#home' },
-  { label: 'Tentang Saya', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Pendidikan', href: '#pendidikan' },
-  { label: 'Pengalaman', href: '#pengalaman' },
-  { label: 'Eksperimen', href: '#blog' },
-  { label: 'Kontak', href: '#contact' },
+  { k: 'f_home', href: '#home' },
+  { k: 'f_tentang', href: '#about' },
+  { k: 'nav_portfolio', href: '#portfolio' },
+  { k: 'nav_pendidikan', href: '#pendidikan' },
+  { k: 'nav_pengalaman', href: '#pengalaman' },
+  { k: 'nav_eksperimen', href: '#blog' },
+  { k: 'kon_kontak', href: '#contact' },
 ];
 
 const kategori = ['Agen AI', 'Infrastruktur', 'Otomasi'];
 
+import { usePrefs } from '../prefs';
+
 export default function Footer() {
+  const { t: tr } = usePrefs();
   return (
     <footer id="footer" className="bg-[#0b0b10] text-slate-400">
       <div className="container mx-auto px-4">
@@ -27,15 +30,14 @@ export default function Footer() {
               </span>
             </a>
             <p className="mt-5 text-[14.5px] leading-relaxed max-w-sm">
-              Portofolio Fikri Hikam A. — Full-Stack Web &amp; Data Analytics. Bagian dari
-              museum digital TillRea di tillrea.my.id.
+{tr('footer_desc')}
             </p>
             <p className="mt-4 text-[14.5px]">
-              <a href="https://tillrea.my.id/berkas" className="hover:text-white">Berkas</a>
+              <a href="https://tillrea.my.id/berkas" className="hover:text-white">{tr('f_berkas')}</a>
               {' • '}
-              <a href="https://tillrea.my.id/admin" className="hover:text-white">Admin Pameran</a>
+              <a href="https://tillrea.my.id/admin" className="hover:text-white">{tr('f_admin')}</a>
               {' • '}
-              <a href="https://tillrea.my.id/" className="hover:text-white">Lobi TillRea</a>
+              <a href="https://tillrea.my.id/" className="hover:text-white">{tr('f_lobi')}</a>
             </p>
             <div className="flex items-center mt-6">
               <SocialIcons variant="footer" />
@@ -43,12 +45,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-white text-[15px] mb-5">Jelajahi</h3>
+            <h3 className="font-bold text-white text-[15px] mb-5">{tr('f_jelajahi')}</h3>
             <ul className="space-y-3">
-              {tautan.map((t) => (
-                <li key={t.label}>
-                  <a href={t.href} className="text-[14.5px] hover:text-white transition-colors">
-                    {t.label}
+              {tautan.map((x) => (
+                <li key={x.k}>
+                  <a href={x.href} className="text-[14.5px] hover:text-white transition-colors">
+                    {tr(x.k)}
                   </a>
                 </li>
               ))}
@@ -56,7 +58,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-white text-[15px] mb-5">Topik Eksperimen</h3>
+            <h3 className="font-bold text-white text-[15px] mb-5">{tr('f_topik')}</h3>
             <ul className="space-y-3">
               {kategori.map((k) => (
                 <li key={k}>
@@ -66,9 +68,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <h3 className="font-bold text-white text-[15px] mt-9 mb-4">Hubungi Saya</h3>
+            <h3 className="font-bold text-white text-[15px] mt-9 mb-4">{tr('hubungi')}</h3>
             <p className="text-[14.5px]">fikrihikam9@gmail.com</p>
-            <p className="text-[14.5px] mt-1">Jepara, Jawa Tengah</p>
+            <p className="text-[14.5px] mt-1">{tr('f_lokasi')}</p>
           </div>
         </div>
 

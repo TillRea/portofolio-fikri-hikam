@@ -18,23 +18,26 @@ const services = [
   },
 ];
 
+import { usePrefs } from '../prefs';
+
 export default function Layanan() {
+  const { t } = usePrefs();
   return (
     <section id="layanan" className="py-24 lg:py-28 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              05 — Layanan
+              {t('sec_lay_e')}
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-dark">
-              Jasa optimasi website &amp; SEO lokal
+              {t('sec_lay_h')}
             </h2>
             <span className="text-[11.5px] font-bold uppercase tracking-[0.06em] bg-violet-100 text-primary px-3 py-1.5 rounded-full">
-              Dibuka untuk UMKM &amp; bisnis lokal
+              {t('lay_badge')}
             </span>
           </div>
           <p className="text-slate-600 leading-relaxed text-[15.5px] mt-5 max-w-3xl">

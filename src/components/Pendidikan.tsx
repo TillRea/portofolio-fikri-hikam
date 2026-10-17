@@ -17,19 +17,22 @@ const entries = [
   },
 ];
 
+import { usePrefs } from '../prefs';
+
 export default function Pendidikan() {
+  const { t } = usePrefs();
   return (
     <section id="pendidikan" className="py-24 lg:py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              03 — Pendidikan
+              {t('sec_pend_e')}
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-dark">
-            Riwayat pendidikan
+            {t('sec_pend_h')}
           </h2>
 
           <div className="mt-12 grid lg:grid-cols-[1fr_360px] gap-10 items-start">

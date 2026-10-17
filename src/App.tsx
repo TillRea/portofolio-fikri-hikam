@@ -9,6 +9,7 @@ import Layanan from './components/Layanan';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { PrefsProvider } from './prefs';
 
 export default function App() {
   const [showTop, setShowTop] = useState(false);
@@ -21,6 +22,7 @@ export default function App() {
   }, []);
 
   return (
+    <PrefsProvider>
     <div className="relative min-h-screen bg-white text-dark antialiased">
       <Header />
       <main>
@@ -47,5 +49,6 @@ export default function App() {
         <span className="block h-4 w-4 rotate-45 border-t-2 border-l-2 border-white mt-1.5" />
       </a>
     </div>
+    </PrefsProvider>
   );
 }

@@ -78,7 +78,10 @@ function domainOf(url?: string) {
   }
 }
 
+import { usePrefs } from '../prefs';
+
 export default function Portfolio() {
+  const { t } = usePrefs();
   const [projects, setProjects] = useState<Project[]>(initialProjects);
 
   useEffect(() => {
@@ -118,11 +121,10 @@ export default function Portfolio() {
           </div>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-dark">
-              Proyek yang sudah live
+              {t('sec_port_h')}
             </h2>
             <p className="text-slate-600 max-w-md text-[15.5px] leading-relaxed">
-              Setiap proyek berjalan di subdomainnya sendiri dan bisa dikunjungi langsung —
-              daftar ini terhubung ke Ruang Pameran TillRea.
+{t('sec_port_p')}
             </p>
           </div>
 

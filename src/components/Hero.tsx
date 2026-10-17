@@ -1,6 +1,9 @@
 import SocialIcons from './SocialIcons';
 
+import { usePrefs } from '../prefs';
+
 export default function Hero() {
+  const { t } = usePrefs();
   return (
     <section id="home" className="relative overflow-hidden pt-[136px] pb-20 lg:pt-[168px] lg:pb-28">
       {/* Latar: glow ungu lembut + grid samar ala situs modern */}
@@ -31,11 +34,11 @@ export default function Hero() {
               <span className="w-5 h-5 rounded-full bg-violet-100 flex items-center justify-center">
                 <span className="w-[7px] h-[7px] rounded-full bg-primary" />
               </span>
-              Mahasiswa Sistem Informasi — UNISNU Jepara
+              {t('hero_badge')}
             </span>
 
             <h1 className="mt-7 text-[42px] leading-[1.05] sm:text-6xl lg:text-[64px] font-extrabold tracking-[-0.03em] text-dark">
-              Halo, saya
+              {t('halo')}
               <span className="block">Fikri Hikam A.</span>
               <span className="block mt-2 text-[26px] sm:text-4xl lg:text-[40px] font-extrabold tracking-[-0.02em] bg-gradient-to-r from-primary via-indigo-600 to-fuchsia-600 bg-clip-text text-transparent">
                 Full-Stack Web &amp; Data Analytics
@@ -43,9 +46,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 text-[16.5px] lg:text-lg leading-relaxed text-slate-600 max-w-xl">
-              Saya merancang dan membangun antarmuka web modern yang cepat dan rapi,
-              mengintegrasikan arsitektur sistem, dan mengolah data menjadi eksplorasi
-              interaktif — semua karya saya live dan terawat di TillRea.
+{t('hero_p')}
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -53,13 +54,13 @@ export default function Hero() {
                 href="#portfolio"
                 className="inline-flex items-center gap-2 bg-primary text-white font-semibold text-[15px] px-7 py-3.5 rounded-full shadow-[0_12px_24px_-10px_rgba(109,40,217,0.6)] hover:bg-violet-800 hover:-translate-y-px transition-all"
               >
-                Lihat Portfolio
+                {t('lihat')}
               </a>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-white text-dark font-semibold text-[15px] px-7 py-3.5 rounded-full border border-slate-300 hover:border-slate-400 transition-colors"
               >
-                Hubungi Saya
+                {t('hubungi')}
               </a>
             </div>
 
@@ -84,12 +85,12 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
               <span className="text-[13px] font-semibold text-dark leading-none">
-                Terbuka untuk kolaborasi
+                {t('terbuka')}
               </span>
             </div>
             <div className="absolute bottom-5 -right-3 sm:-right-6 bg-white rounded-2xl shadow-lg border border-slate-100 px-4 py-3">
               <span className="text-[13px] font-semibold text-dark leading-none">
-                📍 Jepara, Jawa Tengah
+                {t('lokasi')}
               </span>
             </div>
           </div>

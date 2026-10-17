@@ -26,19 +26,22 @@ const facts = [
   { k: 'Fokus', v: 'Web Full-Stack & Data' },
 ];
 
+import { usePrefs } from '../prefs';
+
 export default function About() {
+  const { t } = usePrefs();
   return (
     <section id="about" className="py-24 lg:py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              01 — Tentang Saya
+              {t('sec_about_e')}
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-dark max-w-2xl">
-            Membangun web yang cepat, rapi, dan benar-benar dipakai orang
+            {t('sec_about_h')}
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mt-12">

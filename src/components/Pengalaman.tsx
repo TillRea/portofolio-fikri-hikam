@@ -5,19 +5,22 @@ const tasks = [
   'Pengelolaan Google Maps Business agar lokasi usaha tampil akurat',
 ];
 
+import { usePrefs } from '../prefs';
+
 export default function Pengalaman() {
+  const { t } = usePrefs();
   return (
     <section id="pengalaman" className="py-24 lg:py-28 bg-slate-50 border-y border-slate-200/80">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-[13px] font-bold tracking-[0.14em] uppercase text-primary">
-              04 — Pengalaman
+              {t('sec_peng_e')}
             </span>
             <span className="h-px flex-1 bg-slate-200" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-dark">
-            Pengalaman &amp; magang
+            {t('sec_peng_h')}
           </h2>
 
           <div className="mt-12 bg-white border border-slate-200 rounded-3xl p-7 sm:p-9 shadow-[0_1px_2px_rgba(15,23,42,0.05)]">
