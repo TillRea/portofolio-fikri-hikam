@@ -51,6 +51,41 @@ export default function Pengalaman() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-8 border-t border-slate-100 pt-7">
+              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-primary">
+                Proyek Pilihan
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 mt-4">
+                <img
+                  src="/proyek-furniwell.jpg"
+                  alt="Contoh produk furnitur Furniwell Indonesia"
+                  className="w-full sm:w-44 aspect-square object-cover rounded-2xl border border-slate-200 shrink-0"
+                  loading="lazy"
+                />
+                <div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h4 className="font-bold text-dark text-[17px] tracking-tight">
+                      Prototipe Website Ekspor — Furniwell Indonesia
+                    </h4>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.06em] bg-slate-100 text-slate-500 px-2.5 py-1 rounded-full">
+                      Studi Kasus
+                    </span>
+                  </div>
+                  <p className="text-slate-600 text-[15px] leading-relaxed mt-2 max-w-2xl">
+                    Website profil perusahaan berbahasa Inggris untuk produsen furnitur kayu
+                    solid asal Jawa Tengah yang menyasar buyer internasional — berisi katalog
+                    produk, kapabilitas produksi custom, galeri pabrik, dan alur permintaan
+                    penawaran (RFQ). Selama magang, saya terlibat dalam penyiapan dan
+                    penataan kontennya untuk audiens luar negeri.
+                  </p>
+                  <p className="text-slate-400 text-[13px] leading-relaxed mt-3">
+                    Prototipe ini berjalan di lingkungan uji terpisah dan bukan situs resmi
+                    klien — ditampilkan sebagai studi kasus, tanpa tautan.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 mt-6 items-start">
